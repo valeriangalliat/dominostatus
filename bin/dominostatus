@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+const dominos = require('../src')
+
+const [ country, phone ] = process.argv.slice(2)
+
+dominos.getOrders(country, phone)
+  .then(orders => JSON.stringify(orders, null, 2))
+  .then(console.log)
